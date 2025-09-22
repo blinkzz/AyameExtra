@@ -52,7 +52,7 @@ jobs:
       if: steps.version_changed.outputs.changed == 'true'
       run: |
         # Create a zip file with the addon contents
-        zip -r "AyameMedia-v${{ steps.current_version.outputs.version }}.zip" . \
+        zip -r "release.zip" . \
           -x "*.git*" "*.github*" "README.md" "*.md"
         
     - name: Create Release
@@ -60,9 +60,9 @@ jobs:
       uses: softprops/action-gh-release@v2
       with:
         tag_name: v${{ steps.current_version.outputs.version }}
-        name: AyameMedia v${{ steps.current_version.outputs.version }}
+        name: v${{ steps.current_version.outputs.version }}
         draft: false
         prerelease: false
-        files: AyameMedia-v${{ steps.current_version.outputs.version }}.zip
+        files: release.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
