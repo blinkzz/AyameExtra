@@ -1,0 +1,9 @@
+## Interface: 50500
+## Title: AyameMedia
+## Notes: Всякое полезное
+
+# Core files
+# AyameMedia.lua
+
+# Sound files
+# Sounds\
