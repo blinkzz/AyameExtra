@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'AyameMedia.toc'
+      - 'AyameExtra.toc'
 
 jobs:
   check-version-and-release:
@@ -19,7 +19,7 @@ jobs:
     - name: Get current version
       id: current_version
       run: |
-        VERSION=$(grep "^## Version:" AyameMedia.toc | sed 's/## Version: //')
+        VERSION=$(grep "^## Version:" AyameExtra.toc | sed 's/## Version: //')
         echo "version=$VERSION" >> $GITHUB_OUTPUT
         echo "Current version: $VERSION"
         
@@ -27,13 +27,13 @@ jobs:
       id: previous_version
       run: |
         # Get the version from the previous commit
-        git checkout HEAD~1 -- AyameMedia.toc 2>/dev/null || echo "No previous version found"
-        if [ -f "AyameMedia.toc" ]; then
-          PREV_VERSION=$(grep "^## Version:" AyameMedia.toc | sed 's/## Version: //' || echo "")
+        git checkout HEAD~1 -- AyameExtra.toc 2>/dev/null || echo "No previous version found"
+        if [ -f "AyameExtra.toc" ]; then
+          PREV_VERSION=$(grep "^## Version:" AyameExtra.toc | sed 's/## Version: //' || echo "")
         else
           PREV_VERSION=""
         fi
-        git checkout HEAD -- AyameMedia.toc  # Restore current version
+        git checkout HEAD -- AyameExtra.toc  # Restore current version
         echo "prev_version=$PREV_VERSION" >> $GITHUB_OUTPUT
         echo "Previous version: $PREV_VERSION"
         
