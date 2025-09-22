@@ -3,9 +3,3 @@
 ## Notes: Всякое полезное
 ## Version: 1
 ## X-Wago-ID: b6XVzoGp
-
-# Core files
-# AyameMedia.lua
-
-# Sound files
-# Sounds\
