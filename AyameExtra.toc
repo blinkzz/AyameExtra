@@ -1,5 +1,5 @@
 ## Interface: 50500
 ## Title: AyameExtra
 ## Notes: Всякое полезное
-## Version: 1.0.0
+## Version: 1.1.0
 ## X-Wago-ID: b6XVzoGp
